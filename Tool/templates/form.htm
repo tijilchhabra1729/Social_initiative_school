@@ -1,0 +1,57 @@
+{%extends 'base.htm'%}
+{%block content%}
+<form method="POST">
+  {{form.hidden_tag()}}
+  <div class="form-group">
+    <small class = 'text-danger'></small>
+    {{form.gender.label}}{{form.gender()}}
+  </div>
+  <div class="form-group">
+    <small class = 'text-danger'></small>
+    {{form.profile_sites.label}}{{form.profile_sites()}}
+  </div>
+  <div class="form-group">
+    <small class = 'text-danger'></small>
+    {{form.age_aware.label}}{{form.age_aware()}}
+  </div>
+  <div class="form-group">
+    <small class = 'text-danger'></small>
+    {{form.information.label}}{{form.information()}}
+  </div>
+  <div class="form-group">
+    <small class = 'text-danger'></small>
+    {{form.friend_stranger.label}}{{form.friend_stranger()}}
+  </div>
+  <div class="form-group">
+    <small class = 'text-danger'></small>
+    {{form.policies.label}}{{form.policies()}}
+  </div>
+  <div class="form-group">
+    <small class = 'text-danger'></small>
+    {{form.victim.label}}{{form.victim()}}
+  </div>
+  <div class="form-group">
+    <small class = 'text-danger'></small>
+    {{form.government.label}}{{form.government()}}
+  </div>
+  <div class="form-group">
+    <small class = 'text-danger'></small>
+    {{form.social_sites.label}}{{form.social_sites()}}
+  </div>
+  <div class="form-group">
+    <small class = 'text-danger'></small>
+    {{form.parents.label}}{{form.parents()}}
+  </div>
+  <div class="form-group">
+    <small class = 'text-danger'></small>
+    {{form.school.label}}{{form.school()}}
+  </div>
+  <div class="form-group">
+    <small class = 'text-danger'></small>
+    {{form.opinion.label}}{{form.opinion()}}
+  </div>
+  <div class="form-group">
+    {{form.submit()}}
+  </div>
+</form>
+{%endblock%}
