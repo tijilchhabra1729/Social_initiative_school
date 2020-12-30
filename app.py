@@ -43,11 +43,97 @@ def survey(id):
 
 @app.route('/result', methods = ['GET' ,'POST'])
 def result():
-    gender = Survey.query.filter_by(gender = 'Male')
+    y = Survey.query.with_entities(Survey.parents)
+    parents_yes = 0
+    parents_no = 0
+    parents_maybe = 0
+    for i in y:
+        if i[0] == "Yes":
+            parents_yes += 1
+        elif i[0] == "No":
+            parents_no += 1
+        else:
+            parents_maybe += 1
+
+    y = Survey.query.with_entities(Survey.age_limit)
+    age_yes = 0
+    age_no = 0
+    age_cant = 0
+    for i in y:
+        if i[0] == "Yes":
+            age_yes += 1
+        elif i[0] == "No":
+            age_no += 1
+        else:
+            age_cant += 1
+
+    y = Survey.query.with_entities(Survey.friend_stranger)
+    stranger_yes = 0
+    stranger_no = 0
     n = 0
-    for i in gender:
-        n +=1
-    return render_template('result.htm')
+    for i in y:
+        if i[0] == "Yes":
+            stranger_yes += 1
+        elif i[0] == "No":
+            stranger_no += 1
+
+    y = Survey.query.with_entities(Survey.policies)
+    n = 0
+    policies_yes = 0
+    policies_no = 0
+    policies_cant = 0
+    for i in y:
+        if i[0] == "Yes":
+            policies_yes += 1
+        elif i[0] == "No":
+            policies_no += 1
+        else:
+            policies_cant += 1
+    y = Survey.query.with_entities(Survey.victim)
+    victim_yes = 0
+    victim_no = 0
+    victim_prefer = 0
+    for i in y:
+        if i[0] == "Yes":
+            victim_yes += 1
+        elif i[0] == "No":
+            victim_no += 1
+        else:
+            victim_prefer += 1
+
+    y = Survey.query.with_entities(Survey.media)
+    facebook = 0
+    instagram = 0
+    twitter = 0
+    snapchat = 0
+    youtube = 0
+    whatsapp = 0
+    discord = 0
+    other = 0
+    for i in y:
+        sites = i.split(',')
+        for j in sites:
+            if j == 'Facebook':
+                facebook += 1
+            elif j == 'Instagram':
+                instagram += 1
+            elif j == 'Twitter':
+                twitter += 1
+            elif j == 'Snapchat':
+                snapchat += 1
+            elif j == 'Youtube':
+                youtube += 1
+            elif j == 'Whatsapp':
+                whatsapp += 1
+            elif j == 'Discord':
+                discord += 1
+            else:
+                other += 1
+    return render_template('result.htm' , parents_yes = parents_yes , parents_no = parents_no , parents_maybe = parents_maybe,
+                            age_yes = age_yes , age_no = age_no , age_cant = age_cant , stranger_no = stranger_no , stranger_yes = stranger_yes,
+                            policies_no = policies_no , policies_yes = policies_yes , policies_cant = policies_cant , victim_yes = victim_yes,
+                            victim_no = victim_no , victim_prefer = victim_prefer , facebook = facebook , twitter = twitter , instagram = instagram,
+                            snapchat = snapchat , youtube = youtube , whatsapp = whatsapp , discord = discord , other = other)
 
 if __name__ == '__main__':
     app.run(debug=True)

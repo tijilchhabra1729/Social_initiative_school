@@ -3,37 +3,119 @@
     <!--Load the AJAX API-->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-
-      // Load the Visualization API and the corechart package.
       google.charts.load('current', {'packages':['corechart']});
 
       // Set a callback to run when the Google Visualization API is loaded.
-      google.charts.setOnLoadCallback(drawChart);
-
+      google.charts.setOnLoadCallback(parentsChart);
+      google.charts.setOnLoadCallback(ageChart);
+      google.charts.setOnLoadCallback(strangerChart);
+      google.charts.setOnLoadCallback(policyChart);
+      google.charts.setOnLoadCallback(victimChart);
       // Callback that creates and populates a data table,
       // instantiates the pie chart, passes in the data and
       // draws it.
-      function drawChart() {
+      function parentsChart() {
 
         // Create the data table.
         var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
+        data.addColumn('string', 'parents');
+        data.addColumn('number', 'what');
         data.addRows([
-          ['Mushrooms', 3],
-          ['Onions', 1],
-          ['Olives', 1],
-          ['Zucchini', 1],
-          ['Pepperoni', 2]
+          ['Yes', {{parents_yes}}],
+          ['No', {{parents_no}}],
+          ['Maybe', {{parents_maybe}}],
         ]);
 
         // Set chart options
-        var options = {'title':'How Much Pizza I Ate Last Night',
+        var options = {'title':'Are your parents aware of your profile on such social networking sites?',
                        'width':400,
                        'height':300};
 
         // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        var chart = new google.visualization.PieChart(document.getElementById('parents_div'));
+        chart.draw(data, options);
+      }
+      function ageChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'age');
+        data.addColumn('number', 'do they know');
+        data.addRows([
+          ['Yes', {{age_yes}}],
+          ['No', {{age_no}}],
+          ["Can't say", {{age_cant}}],
+        ]);
+
+        // Set chart options
+        var options = {'title':'Are you aware of the age limits for using various social networking sites?',
+                       'width':400,
+                       'height':300};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('age_div'));
+        chart.draw(data, options);
+      }
+      function strangerChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'stranger');
+        data.addColumn('number', 'friend');
+        data.addRows([
+          ['Yes', {{stranger_yes}}],
+          ['No', {{stranger_no}}],
+        ]);
+
+        // Set chart options
+        var options = {'title':'Do you accept friend requests from strangers?',
+                       'width':400,
+                       'height':300};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('stranger_div'));
+        chart.draw(data, options);
+      }
+      function policyChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'yes/no');
+        data.addColumn('number', 'number');
+        data.addRows([
+          ['Yes', {{policies_yes}}],
+          ['No', {{policies_no}}],
+          ["Can't say", {{policies_cant}}],
+        ]);
+
+        // Set chart options
+        var options = {'title':'Do you think that privacy policies are effective in social networking sites?',
+                       'width':400,
+                       'height':300};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('policies_div'));
+        chart.draw(data, options);
+      }
+      function victimChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'victim');
+        data.addColumn('number', 'number');
+        data.addRows([
+          ['Yes', {{victim_yes}}],
+          ['No', {{victim_no}}],
+          ["Prefer not to say", {{victim_prefer}}],
+        ]);
+
+        // Set chart options
+        var options = {'title':'Have you ever been a victim of cyber crime?',
+                       'width':400,
+                       'height':300};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('victim_div'));
         chart.draw(data, options);
       }
     </script>
@@ -41,6 +123,16 @@
 
   <body>
     <!--Div that will hold the pie chart-->
-    <div id="chart_div"></div>
+    <table>
+      <tr>
+        <td><div id="parents_div" style="border: 1px solid #ccc"></div></td>
+        <td><div id="stranger_div" style="border: 1px solid #ccc"></div></td>
+        <td><div id="victim_div" style="border: 1px solid #ccc"></div></td>
+      </tr>
+      <tr>
+        <td><div id="age_div" style="border: 1px solid #ccc"></div></td>
+        <td><div id="policies_div" style="border: 1px solid #ccc"></div></td>
+      </tr>
+    </table>
   </body>
 </html>
