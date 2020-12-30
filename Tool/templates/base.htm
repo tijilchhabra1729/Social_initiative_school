@@ -1,16 +1,42 @@
 <html>
-<head>
-
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Orion | Home</title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="../css/styles.css">
+      <link rel="shortcut icon" href="img/logo.png">
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700&display=swap" rel="stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+      <div class="loading-wrapper">
+          <div class="loading">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+      </div>
+      <nav class="navbar">
+          <a href="{{url_for('index')}}" class="navbar__link">Home</a>
+          <a href="{{url_for('about')}}" class="navbar__link">About</a>
+          <a href="index.htm" class="navbar__logo">Orion</a>
+          <a href="survey.htm" class="navbar__link">Surveys</a>
+          <a href="contact.htm" class="navbar__link">Contact</a>
+      </nav>
     <title>vyrs</title>
     {%block head%}
 
     {%endblock%}
     <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
 <body>
-
 
   {%block content%}
   {%endblock%}
+  <footer class="footer">
+      <p class="footer__text">Made with ❤️ by 9D</p>
+  </footer>
 </body>

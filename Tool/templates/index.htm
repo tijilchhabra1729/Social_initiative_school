@@ -1,34 +1,6 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Orion | Home</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../css/styles.css">
-        <link rel="shortcut icon" href="img/logo.png">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700&display=swap" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    </head>
-    <body>
-        <div class="loading-wrapper">
-            <div class="loading">
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-              </div>
-        </div>
-        <nav class="navbar">
-            <a href="index.htm" class="navbar__link">Home</a>
-            <a href="about.htm" class="navbar__link">About</a>
-            <a href="index.htm" class="navbar__logo">Orion</a>
-            <a href="survey.htm" class="navbar__link">Surveys</a>
-            <a href="contact.htm" class="navbar__link">Contact</a>
-        </nav>
-
-        <main class="hero">
+{% extends "base.htm" %}
+{% block content %}
+      <main class="hero">
             <div class="hero__text">
                 <h1 class="heading-1 heading-1--white mgb-extra-small">Knowing social <br> media</h1>
                 <p class="hero__para mgb-small">
@@ -120,7 +92,7 @@
                 <div class="reviews mgb-large">
                     <div class="review" id="review1">
                         <p class="review__text">
-                            I started posting music covers on a social media platform i.e Instagram since last year and I've still been posting different genres in different ways reels(15 and 30 seconds ), One-minute covers and IGTV (long covers). By tagging famous creators/artists/celebrities to watch our content and reshare so that people can get to know more about our talent and quality of content we post. I will keep posting and being active on social media doing my bit for myself as well as the society in the hope for love , fame and respect. 
+                            I started posting music covers on a social media platform i.e Instagram since last year and I've still been posting different genres in different ways reels(15 and 30 seconds ), One-minute covers and IGTV (long covers). By tagging famous creators/artists/celebrities to watch our content and reshare so that people can get to know more about our talent and quality of content we post. I will keep posting and being active on social media doing my bit for myself as well as the society in the hope for love , fame and respect.
                         </p>
                         <p class="review__name">
                             ~Sanya Bhattacharjee
@@ -131,7 +103,7 @@
                     </div>
                     <div class="review" id="review2">
                         <p class="review__text">
-                            Social media for me has been really beneficial as i recently made an edits account names @she.who.edits and this was a way for me to use my editing skills. my edits recieved a lot of views on instagram, just recently one of my reels hit 5.5 million. this all was very huge and unexpected for me. I got a lot of dms regarding my editing skills and someone even offered to pay me which is amazing as someone can make sure to showcase their talent through instagram and people actually take it seriously. 
+                            Social media for me has been really beneficial as i recently made an edits account names @she.who.edits and this was a way for me to use my editing skills. my edits recieved a lot of views on instagram, just recently one of my reels hit 5.5 million. this all was very huge and unexpected for me. I got a lot of dms regarding my editing skills and someone even offered to pay me which is amazing as someone can make sure to showcase their talent through instagram and people actually take it seriously.
                         </p>
                         <p class="review__name">
                             ~Sharanya Gupta
@@ -159,10 +131,6 @@
                 </div>
             </div>
         </section>
-
-        <footer class="footer">
-            <p class="footer__text">Made with ❤️ by 9D</p>
-        </footer>
         <script src="../js/app.js"></script>
     </body>
-</html>
+    {% endblock %}
