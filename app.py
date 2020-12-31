@@ -118,19 +118,19 @@ def result():
         if i[0]:
             for j in i[0].split(','):
                 print(j)
-                if j == "'Facebook'" or j == " 'Instagram'":
+                if j == "'Facebook'" or j == " 'Facebook'" or j == "Facebook" or j == " Facebook":
                     facebook += 1
-                elif j == "'Instagram'" or j == " 'Instagram'":
+                elif j == "'Instagram'" or j == " 'Instagram'" or j == "Instagram" or j == " Instagram":
                     instagram += 1
-                elif j == "'Twitter'" or j == " 'Twitter'":
+                elif j == "'Twitter'" or j == " 'Twitter'" or j == "Twitter" or j == " Twitter":
                     twitter += 1
-                elif j == "'Snapchat'" or j == " 'Snapchat'":
+                elif j == "'Snapchat'" or j == " 'Snapchat'" or j == "Snapchat" or j == " Snapchat":
                     snapchat += 1
-                elif j == "'Youtube'" or j == " 'Youtube'":
+                elif j == "'YouTube'" or j == " 'YouTube'" or j == "YouTube" or j == " YouTube":
                     youtube += 1
-                elif j == "'Whatsapp'" or j == " 'Whatsapp'":
+                elif j == "'WhatsApp'" or j == " 'WhatsApp'" or j == "WhatsApp" or j == " WhatsApp" :
                     whatsapp += 1
-                elif j == " 'Discord'" or j == "'Discord'":
+                elif j == " 'Discord'" or j == "'Discord'" or j == " Discord" or j == "Discord":
                     discord += 1
                 else:
                     other += 1
