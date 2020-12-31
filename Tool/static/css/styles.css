@@ -107,7 +107,7 @@ body {
 .hero {
   height: calc(100vh - 5.5rem);
   width: 100vw;
-  background-image: url("/img/main hero.jpg");
+  background-image: url("../img/main hero.jpg");
   background-size: 100% 100%;
   position: relative; }
   @media only screen and (max-width: 56.25em) {
@@ -132,7 +132,7 @@ body {
     align-items: center; }
   .about__heading {
     color: transparent;
-    background-image: url("/img/about text.jpg");
+    background-image: url("../img/about text.jpg");
     background-clip: text;
     -webkit-background-clip: text;
     font-size: 12rem;
@@ -227,7 +227,7 @@ body {
     align-items: center; }
   .survey__heading {
     color: transparent;
-    background-image: url("/img/about text.jpg");
+    background-image: url("../img/about text.jpg");
     background-clip: text;
     -webkit-background-clip: text;
     font-size: 12rem;
@@ -274,7 +274,7 @@ body {
     align-items: center; }
   .impact__heading {
     color: transparent;
-    background-image: url("/img/about text.jpg");
+    background-image: url("../img/about text.jpg");
     background-clip: text;
     -webkit-background-clip: text;
     font-size: 12rem;
@@ -361,7 +361,7 @@ body {
 .about-hero {
   width: 100vw;
   height: calc(100vh - 5.5rem);
-  background-image: url("/img/about hero.jpg");
+  background-image: url("../img/about hero.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position: center;
