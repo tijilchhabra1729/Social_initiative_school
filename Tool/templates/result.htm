@@ -11,6 +11,7 @@
       google.charts.setOnLoadCallback(strangerChart);
       google.charts.setOnLoadCallback(policyChart);
       google.charts.setOnLoadCallback(victimChart);
+      google.charts.setOnLoadCallback(mediaChart);
       // Callback that creates and populates a data table,
       // instantiates the pie chart, passes in the data and
       // draws it.
@@ -118,6 +119,29 @@
         var chart = new google.visualization.PieChart(document.getElementById('victim_div'));
         chart.draw(data, options);
       }
+      function mediaChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['name', 'number', { role: 'style' }],
+          ['Facebook', {{facebook}} , 'blue'],
+          ['Snapchat', {{snapchat}} , 'yellow'],
+          ['Twitter', {{twitter}} , 'red'],
+          ['Instagram' , {{instagram}} , 'blue'],
+          ['Youtube' , {{youtube}} , 'red'],
+          ['WhatsApp' , {{whatsapp}} , 'green'],
+          ['Discord' , {{discord}} , 'blue'],
+          ['Other' , {{other}} , 'black'],
+        ]);
+
+        // Set chart options
+        var options = {'title':'Please select all the social networking sites for which you have created a profile',
+                       'width':400,
+                       'height':300,
+                        'legend' : 'none'};
+
+        // Instantiate and draw our chart, passing in some options.
+        var barchart = new google.visualization.BarChart(document.getElementById('media_div'));
+        barchart.draw(data, options);
+      }
     </script>
   </head>
 
@@ -132,6 +156,7 @@
       <tr>
         <td><div id="age_div" style="border: 1px solid #ccc"></div></td>
         <td><div id="policies_div" style="border: 1px solid #ccc"></div></td>
+        <td><div id="media_div" style="border: 1px solid #ccc"></div></td>
       </tr>
     </table>
   </body>

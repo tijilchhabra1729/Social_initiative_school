@@ -111,24 +111,25 @@ def result():
     discord = 0
     other = 0
     for i in y:
-        sites = i.split(',')
-        for j in sites:
-            if j == 'Facebook':
-                facebook += 1
-            elif j == 'Instagram':
-                instagram += 1
-            elif j == 'Twitter':
-                twitter += 1
-            elif j == 'Snapchat':
-                snapchat += 1
-            elif j == 'Youtube':
-                youtube += 1
-            elif j == 'Whatsapp':
-                whatsapp += 1
-            elif j == 'Discord':
-                discord += 1
-            else:
-                other += 1
+        if i[0]:
+            for j in i[0].split(','):
+                print(j)
+                if j == "'Facebook'" or j == " 'Instagram'":
+                    facebook += 1
+                elif j == "'Instagram'" or j == " 'Instagram'":
+                    instagram += 1
+                elif j == "'Twitter'" or j == " 'Twitter'":
+                    twitter += 1
+                elif j == "'Snapchat'" or j == " 'Snapchat'":
+                    snapchat += 1
+                elif j == "'Youtube'" or j == " 'Youtube'":
+                    youtube += 1
+                elif j == "'Whatsapp'" or j == " 'Whatsapp'":
+                    whatsapp += 1
+                elif j == " 'Discord'" or j == "'Discord'":
+                    discord += 1
+                else:
+                    other += 1
     return render_template('result.htm' , parents_yes = parents_yes , parents_no = parents_no , parents_maybe = parents_maybe,
                             age_yes = age_yes , age_no = age_no , age_cant = age_cant , stranger_no = stranger_no , stranger_yes = stranger_yes,
                             policies_no = policies_no , policies_yes = policies_yes , policies_cant = policies_cant , victim_yes = victim_yes,
