@@ -7,8 +7,11 @@ from sqlalchemy import desc, asc
 
 @app.route('/' , methods = ['GET' , 'POST'])
 def index():
-
     return render_template('index.htm')
+
+@app.route('/about', methods=['GET','POST'])
+def about():
+    return render_template("about.htm")
 
 @app.route('/survey/first/step' , methods = ['GET' , 'POST'])
 def email():
