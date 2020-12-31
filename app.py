@@ -4,7 +4,8 @@ from Tool.forms import emailform , surveyform
 from Tool.models import Survey
 from flask import render_template, request, url_for, redirect, flash, abort
 from sqlalchemy import desc, asc
-
+import pandas as pd
+import secrets
 @app.route('/' , methods = ['GET' , 'POST'])
 def index():
     return render_template('index.htm')
