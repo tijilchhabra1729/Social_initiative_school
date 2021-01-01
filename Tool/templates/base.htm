@@ -11,12 +11,12 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>
-    
+
       <nav class="navbar">
           <a href="{{url_for('index')}}" class="navbar__link">Orion</a>
           <a href="{{url_for('about')}}" class="navbar__link">About</a>
           <a href="{{url_for('email')}}" class="navbar__link">Surveys</a>
-          <a href="contact.htm" class="navbar__link">Contact</a>
+          <a href="{{url_for('contact')}}" class="navbar__link">Contact</a>
       </nav>
     <title>vyrs</title>
     {%block head%}
@@ -31,4 +31,5 @@
   <footer class="footer">
       <p class="footer__text">Made with ❤️ by 9D</p>
   </footer>
+  <script src="../static/js/app.js"></script>
 </body>

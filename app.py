@@ -14,6 +14,10 @@ def index():
 def about():
     return render_template("about.htm")
 
+@app.route('/contact', methods=['GET','POST'])
+def contact():
+    return render_template("contact.htm")
+
 @app.route('/survey/first/step' , methods = ['GET' , 'POST'])
 def email():
     form = emailform()
@@ -43,7 +47,7 @@ def survey(id):
         survey.opinion=form.opinion.data
         db.session.commit()
         return redirect(url_for('result'))
-    return render_template('form.htm' , form = form)
+    return render_template('survey.htm' , form = form)
 
 @app.route('/result', methods = ['GET' ,'POST'])
 def result():

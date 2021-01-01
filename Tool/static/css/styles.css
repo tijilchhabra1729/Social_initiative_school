@@ -415,7 +415,7 @@ body {
 .survey-hero {
   width: 100vw;
   height: calc(100vh - 5.5rem);
-  background-image: url("/img/survey hero.jpg");
+  background-image: url("../img/survey hero.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position: center;
@@ -468,7 +468,7 @@ body {
 .contact-hero {
   width: 100vw;
   height: calc(100vh - 5.5rem);
-  background-image: url("/img/contact hero.jpg");
+  background-image: url("../img/contact hero.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position: center;
