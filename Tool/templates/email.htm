@@ -1,0 +1,18 @@
+{% extends 'base.htm' %}
+{%block content%}
+<section class="email-form">
+    <h1 class="heading-2 heading-2--white mgb-medium">Just one detail!</h1>
+    <form  method="POST" class="form">
+        {{form.hidden_tag()}}
+        <div class="form__group">
+          <small class = 'text-danger'></small>
+          {{form.email(placeholder="Email", class_='form__input')}}{{form.email.label(class_='form__label')}}
+          <small id="emailHelp" class="form__text">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form__group">
+          {{form.submit(class ="btn-cta")}}
+        </div>
+      </form>
+</section>
+<script src="../static/js/footer.js"></script>
+{%endblock%}

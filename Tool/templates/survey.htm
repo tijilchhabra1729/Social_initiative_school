@@ -1,58 +1,74 @@
 {%extends 'base.htm'%}
 {%block content%}
-<form method="POST">
-  {{form.hidden_tag()}}
-  <div class="form-group">
-    <small class = 'text-danger'></small>
-    {{form.gender.label}}{{form.gender()}}
+
+<main class="survey-hero mgb-extra-large">
+  <div class="survey-hero__text-container">
+      <h1 class="heading-1 heading-1--white mgb-extra-small">find out</h1>
+      <p class="about-hero__text">Find out whether you are cyber safe or not</p>
   </div>
-  <div class="form-group">
-    <small class = 'text-danger'></small>
-    {{form.profile_sites.label}}{{form.profile_sites()}}
-  </div>
-  <div class="form-group">
-    <small class = 'text-danger'></small>
-    {{form.age_aware.label}}{{form.age_aware()}}
-  </div>
-  <div class="form-group">
-    <small class = 'text-danger'></small>
-    {{form.information.label}}{{form.information()}}
-  </div>
-  <div class="form-group">
-    <small class = 'text-danger'></small>
-    {{form.friend_stranger.label}}{{form.friend_stranger()}}
-  </div>
-  <div class="form-group">
-    <small class = 'text-danger'></small>
-    {{form.policies.label}}{{form.policies()}}
-  </div>
-  <div class="form-group">
-    <small class = 'text-danger'></small>
-    {{form.victim.label}}{{form.victim()}}
-  </div>
-  <div class="form-group">
-    <small class = 'text-danger'></small>
-    {{form.government.label}}{{form.government()}}
-  </div>
-  <div class="form-group">
-    <small class = 'text-danger'></small>
-    {{form.social_sites.label}}{{form.social_sites()}}
-  </div>
-  <div class="form-group">
-    <small class = 'text-danger'></small>
-    {{form.parents.label}}{{form.parents()}}
-  </div>
-  <div class="form-group">
-    <small class = 'text-danger'></small>
-    {{form.school.label}}{{form.school()}}
-  </div>
-  <div class="form-group">
-    <small class = 'text-danger'></small>
-    {{form.opinion.label}}{{form.opinion()}}
-  </div>
-  <div class="form-group">
-    {{form.submit()}}
-  </div>
-</form>
-<script src="static/js/modal.js"></script>
+</main>
+
+<section class="survey-intro">
+  <h1 class="heading-1 heading-1--black mgb-small">Its simple!</h1>
+  <p class="survey-intro__text">
+      All you need to do is fill out the forms for us to assess your social media practices! We also have a small survey on the emotional conditions of the younger people to help with the effects of social media on them. So please, do not be afraid to encourage any teen or youth near you to fill out the survey. This is all an initiative for your benefit!
+  </p>
+</section>
+
+<section class="survey-form">
+  <form method="POST" class="form">
+    {{form.hidden_tag()}}
+    <div class="form__group">
+      <small class = 'text-danger'></small>
+      {{form.gender.label(class_='form__head')}}{{form.gender(class_ = 'form__input')}}
+    </div>
+    <div class="form__group">
+      <small class = 'text-danger'></small>
+      {{form.profile_sites.label(class_='form__head')}}{{form.profile_sites(class_='form__input')}}
+    </div>
+    <div class="form__group">
+      <small class = 'text-danger'></small>
+      {{form.age_aware.label(class_='form__head')}}{{form.age_aware(class_='form__input')}}
+    </div>
+    <div class="form__group">
+      <small class = 'text-danger'></small>
+      {{form.information.label(class_='form__head')}}{{form.information(class_='form__input')}}
+    </div>
+    <div class="form__group">
+      <small class = 'text-danger'></small>
+      {{form.friend_stranger.label(class_='form__head')}}{{form.friend_stranger(class_='form__input')}}
+    </div>
+    <div class="form__group">
+      <small class = 'text-danger'></small>
+      {{form.policies.label(class_='form__head')}}{{form.policies(class_='form__input')}}
+    </div>
+    <div class="form__group">
+      <small class = 'text-danger'></small>
+      {{form.victim.label(class_='form__head')}}{{form.victim(class_='form__input')}}
+    </div>
+    <div class="form__group">
+      <small class = 'text-danger'></small>
+      {{form.government.label(class_='form__head')}}{{form.government(class_='form__input')}}
+    </div>
+    <div class="form__group">
+      <small class = 'text-danger'></small>
+      {{form.social_sites.label(class_='form__head')}}{{form.social_sites(class_='form__input')}}
+    </div>
+    <div class="form__group">
+      <small class = 'text-danger'></small>
+      {{form.parents.label(class_='form__head')}}{{form.parents(class_='form__input')}}
+    </div>
+    <div class="form__group">
+      <small class = 'text-danger'></small>
+      {{form.school.label(class_='form__head')}}{{form.school(class_='form__input')}}
+    </div>
+    <div class="form__group">
+      <small class = 'text-danger'></small>
+      {{form.opinion.label(class_='form__head')}}{{form.opinion(class_='form__input')}}
+    </div>
+    <div class="form__group">
+      {{form.submit(class_='btn-cta')}}
+    </div>
+  </form>
+</section>
 {%endblock%}

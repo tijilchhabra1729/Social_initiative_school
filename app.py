@@ -18,7 +18,7 @@ def about():
 def contact():
     return render_template("contact.htm")
 
-@app.route('/survey/first/step' , methods = ['GET' , 'POST'])
+@app.route('/email' , methods = ['GET' , 'POST'])
 def email():
     form = emailform()
     if form.validate_on_submit():
@@ -26,7 +26,7 @@ def email():
         db.session.add(user)
         db.session.commit()
         return redirect(url_for('survey' , id = user.id))
-    return render_template('email_form.htm' , form = form)
+    return render_template('email.htm' , form = form)
 
 @app.route('/survey/<id>' , methods = ['GET' , 'POST'])
 def survey(id):
